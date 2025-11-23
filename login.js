@@ -1,8 +1,8 @@
 // User data (for demonstration purposes)
 const users = [
-    { username: 'user1', password: 'password1' },
-    { username: 'user2', password: 'password2' },
-    { username: 'user3', password: 'password3' }
+    { username: 'user101', password: 'password101' },
+    { username: 'user202', password: 'password202' },
+    { username: 'user303', password: 'password303' }
 
 ];
 
