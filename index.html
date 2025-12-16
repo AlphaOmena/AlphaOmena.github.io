@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KQURADA_CASH</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    
+    <style>
+    .scrolling-text-container {
+        width: 100%; /* Or a specific width */
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap; /* Prevent text from wrapping */
+    }
+    .scrolling-text-horizontally {
+        display: inline-block; /* Allow animation */
+        animation: scrollText 22s linear infinite; /* Adjust duration and timing */
+        color: yellow;
+        font-size: 19px;
+    }
+    @keyframes scrollText {
+        0% {
+            transform: translateX(100%); /* Start off-screen to the right */
+        }
+        100% {
+            transform: translateX(-100%); /* End off-screen to the left */
+        }
+    }
+    /*img {
+        animation: rotation 6s infinite linear;
+    }*/
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+    
+    </style>
+    
+</head>
+<body>
+    <div class="container" style="background-color: white; border: 3px solid black; width: 480px; margin-right: 6px;
+        margin-left: 6px;
+        border-radius: 10px;">
+        
+        <div style="margin-right: 0px;">
+        <div style="border: 2px solid red; border-radius: 10px;">
+        <div style="border: 2px solid white; border-radius: 10px;">
+        <div style="border: 2px solid green; border-radius: 10px;">
+        <div style="border: 2px solid white; border-radius: 10">
+        <div style="border: 2px solid black; border-radius: 10px;">
+          <h1 style="color: blue; border-radius: 10px; font-size: 50px; height: 50px; text-align: center;">KQURADA_CASH</h1><hr>
+        <p>Track and record all the daily sales and expenses of your bussiness just by scacnning</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <br>
+        <header>
+            <div style="background-image: url('Space.jpeg'); margin-left: 2px; color: yellow; font-size: 30px; border-radius: 10px; display: flex; text-align: center;">
+            <div><img src="Pillarleft.jpg" style="width: 50px; height: 200px;"></div><div><p class="shake-text" style="font-size: px; padding-top: 15px;"><p style="font-style: italic;">“Creative tension is needed for innovative thinking, to create alternative ideas and to challenge established mind-sets.”</p></div> <div><img src="pillaright.jpg" style="width: 50px; height: 200px;"></div>
+            </div>                           
+            <div style="height: 5px; background-color: green;"></div><br><hr>
+            <button id="shareButton" style="padding: 8px 12px;
+                cursor: pointer;
+                background-color: orange;
+                font-size: 18px;">Share App</button>
+            <hr><p>01001101 01110101 01101110 01100111 01110101 00100000 01111001 01110101 01101011 01101111</p><hr>
+        </header>
+        
+        <h2 style="color: red;">Sections Links</h2>
+        <hr>
+        
+        <div style="background-color: white; width: 490px; height: 250px; border-radius: 10px; border: 2px solid red;"><br>
+        <button id="sec1" data-target="qr-reader" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Scan and Sell</button>
+        <button id="sec2" data-target="section2" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Date and time</button>
+        <button id="sec3" data-target="section1" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Scanned sales list</button>
+        <button id="sec4" data-target="section2" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Total scanned</button><hr>
+        <button id="sec5" data-target="section1" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Add stock item</button>
+        <button id="sec6" data-target="section2" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Sell stock item</button>
+        <button id="sec7" data-target="section1" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">All stock records</button>
+        <button id="sec8" data-target="Sold-Services" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Sold services</button>
+        <hr><button id="sec9" data-target="section1" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Day expenses</button>
+        <button id="sec10" data-target="section2" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Record discounts</button>
+        <button id="sec11" data-target="section1" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Deduct expenses</button>
+        <button id="sec12" data-target="section2" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Day net sales</button><hr>          
+        <button onclick="location.href='weatherindex.html'" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Weather forecast</button>
+        <button onclick="location.href='calcindex.html'" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Calculator</button>
+        <button onclick="location.href='forexindex.html'" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Forex Calculator</button>
+        <button onclick="location.href='financialindex.html'" style="background-color: blue; color: white; font-size: 15px; height: 40px; font-weight: bold; border-radius: 5px;">Other Calculators</button>
+
+
+
+        </div>
+        <div style="background-color: white; margin-left: 15px;"><br><hr>
+        <h3 style="color: red;"><a href="withpercent1.html">Folllw this link for use on or by Barbers, Salonists and Shampoo Girls only to track sales, with automatic calculation of 40% and 50% of sales</a></h3>
+        </div><hr>
+        
+        <div>
+            
+            <div style="height: 300px; width: 489px; border-radius: 10px; padding-right: 10px; background-image: url('Space.jpeg');">
+                <br><br><img src="kquradalogo.jpg" alt="logo" style="width: 200px; height: 200px; border: 1px solid red; border-radius: 50%;">
+            <div class="scrolling-text-container">
+                <div class="scrolling-text-horizontally"><br>
+                     Welcome and enjoy using this application. Scan the Kqurada_cash book to record sales or call 0705858736 to order the book if dont have...Click the link below to see the book.     
+                </div>
+            </div>
+        </div><hr>
+        
+        <p style="font-size: 25px;"><a href="flip.html">Check and Order the Kqurada_Cash Book.</a></p><hr>
+        
+        <p style="color: red;">Scan the Kqurada_Cash Book Here</p>
+        <div id="qr-reader" style="width: 465px; padding-right: 3px; border: 3px solid red; background-color: white; text-align: center;"></div><hr><br>
+        
+        <div style="height: 5px; background-color: green;"></div><br>
+
+        <div style="border: 3px solid black; border-radius: 10px; width: 490px; text-align: left;">
+            
+            <div class="wave-background" style="background-image: url('underwatersun.jpg'); background-repeat: no-repeat; background-size: 500px; "><br>
+        <h1 style="color: black; text-align: center;"><span>A</span><span>D</span><span>V</span><span>E</span><span>R</span><span>T</span><span>I</span><span>S</span><span>E</span><span>M</span><span>E</span><span>N</span><span>T</span><span>S</span></h1>
+            <h3 style="text-align: center; color: black;">Buy and Sell Here</h3><hr>
+        <input type="text" id="searchslide-input" placeholder="Search Products or Services..." onkeyup = "searchImages()" style="padding: 5px;
+                    margin-right: 5px;
+                    margin-left: 10px;
+                    border: 3px solid black;
+                    border-radius: 4px;
+                    font-size: 18px;">
+            <button onclick="window.location.href='https://forms.gle/bQLxgGR2LFnDYCWa6';" class="GFG" style="padding: 8px 12px;
+                cursor: pointer;
+                color: white;
+                border-radius: 5px;            
+                background-color: green;
+                font-size: 15px;">Register to Advertise Here</button>
+            
+            <br><hr>
+            <h3 style="color: black; padding-left: 120px;">Frames Without Pictures are Available</h3><br>
+        </div>
+            
+         <div class="gallery-container" id="galleryContainer">
+             <div class="gallery-images" id="gallery-images">
+                 <!-- Images will be dynamically loaded here -->
+             </div><br>
+         </div>
+            
+            <div style="text-align: center;">            
+            <button id="prev-btn" style="padding: 8px 12px;
+                cursor: pointer;
+                color: white;
+                border-radius: 5px;            
+                background-color: green;
+                font-size: 15px;">Previous</button>&nbsp; &nbsp; &nbsp;
+             <button id="next-btn" style="padding: 8px 12px;
+                cursor: pointer;
+                color: white;
+                border-radius: 5px;            
+                background-color: green;
+                font-size: 15px;">Next</button>
+            </div>                
+
+            <!-- The Modal for expanded image view -->
+            <div id="imageModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="modalImage">
+                <div id="caption"></div>
+            </div>
+        
+        <hr>
+        
+            <br>
+            <div class="header-wrapper"><br>
+        <label for="searchBar" style="font-size: 23px;">Search and book Barbers, Salons and Spars</label>
+                <p style="color: red;">(To See Photos of their Work, Search Above)</p> 
+                
+        <input type="text" id="searchBar" placeholder="Search by Name or Service..." style="border: 3px solid black; border-radius: 5px">
+    </div>
+            <hr>
+    <div class="barber-list-container">
+        <br>
+        <!-- Barber divs will be dynamically added here by JavaScript -->
+    </div>
+        </div>
+        
+        <hr>
+        
+        <div style="height: 5px; background-color: green;"></div><br><br>
+            <hr>
+        
+        <h1 style="color: blue;">Sales, Expeses, Discounts and Stock Tracking Section</h1>
+            <p>(....pdf....)</p>
+            
+        <div class ="results" id="myDiv" style="border: 5px solid black; margin-left: 0px; background-color: white; width: 480px;">
+            <div style="text-align: center; border: 2px solid blue; background-color: yellow;">
+            <h2 style="text-align: center; color: blue;">KQURADA_CASH REPORT FOR/FROM</h2>                       
+            <input type="text" name="username" placeholder="Type a name here" style="padding: 5px; border: 3px solid black; width: 450px; height= 100px; font-size: 25px; text-align: center; color: red;">
+            </div><br>
+            
+            <div style="text-align: center;
+                background-color: #fff;
+                padding: 5px;               
+                height: 200px;
+                padding-left: 10px;
+                border-radius: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; color: #333;">On This Day:</h2>
+                <div style= "background-color: creamwhite; border-radius: 10px;">
+                    <p id="datetime-display" style="font-size: 27px;
+                        font-weight: bold;
+                        color: #007bff;
+                        margin-top: 2px;"></p>
+                </div><hr><br><br>
+            </div><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+
+            <div style="background-color: black; text-align: center; border: 10px solid yellow;">
+            <h2 style="color: white; font-size: 32px;">Scanned Amounts With Total</h2><hr>
+                <div style="border: 5px solid black; border-radius: 10px; background-color: white;">
+            <ul id="scanned-list" style="font-size: 25px;"></ul>
+                <p style="font-size: 40px; color: red;">Total: <span id="total-sum" style="font-size: 40px; color: red;">0</span></p>
+                 <div class="controls">
+                     <button id="subtract-btn">Subtract Last</button>
+                     <button id="delete-btn1">Delete All</button>
+                 </div>  
+                </div>
+            </div><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            
+            <div style="background-color: black; text-align: center; border-radius: 5px; font-size: 25px; border: 10px solid yellow;">
+                <h2 style="color: white;">Stock Records</h2><hr>
+                
+                <div style="border: 5px solid black; border-radius: 10px; background-color: white;">
+                <div class="input-section" style="margin-bottom: 15px; text-align: left;"><br>  
+                    <h3 style="text-align: center;">Add Stock</h3>                    
+                    <label for="itemName" id="stockitem" style="padding-left: 10px;">Stock Item:</label>
+                    <input type="text" id="itemName" placeholder="Enter item name" style="padding: 8px;
+                    margin-right: 5px;
+                    margin-left: 25px;
+                    border: 3px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 18px;"><br><br>
+                    <label for="itemStock" style="padding-left: 10px;">Stock Quntity:</label>
+                    <input type="number" id="itemStock" value="0" min="0" style="padding: 8px;
+                    margin-right: 5px;
+                    font-size: 18px;
+                    margin-left: 1px;
+                    border: 3px solid #ccc;
+                    border-radius: 4px;">
+                    
+                    <button id="addItemBtn4stock" style="padding: 8px 12px;
+                        cursor: pointer;
+                        margin-left: 240px;
+                        background-color: orange;
+                        font-size: 15px;">Add Item</button>
+                </div>
+                </div><hr>                
+                
+                <div style="border: 5px solid black; border-radius: 10px; background-color: white;">
+                    <h3 style="text-align: center;">Sell Stock</h3>
+                <div class="sale-section" style="margin-bottom: 15px; text-align: left;">
+                    <label for="soldItemName" id="sellitem" style="padding-left: 10px;">Sell Item:</label>
+                    <select id="soldItemName" style="width: 100px; height: 30px; border: 2px solid black;"></select><br>
+                    <br><label for="soldQuantity" style="padding-left: 10px;">Quantity:</label>
+                    <input type="number" id="soldQuantity" value="1" min="1" style="padding: 8px;
+                    margin-right: 5px;
+                    margin-left: 10px;
+                        font-size: 18px;
+                    border: 3px solid #ccc;
+                        border-radius: 4px;
+                        width: 80px;">
+                    <button id="sellItemBtn" style=" padding: 8px 12px: text-align: left;
+                        cursor: pointer;
+                        width: 100px;
+                        height: 40px;
+                        background-color: orange;
+                        font-size: 20px;">Sell</button>
+                </div>
+                </div><hr>
+                
+                <div style="border: 5px solid black; border-radius: 10px; background-color: white;">
+                    <h3 style="text-align: center;">Stock Table</h3>
+                <table id="soldItemsTable" style="width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;                    
+                    text-align: left;">
+                    <thead style="border: 3px solid #ddd;
+                        padding: 8px;
+                        text-align: left;">
+                        <tr>
+                            <th style="border: 1px solid #ddd;
+                                padding: 8px;
+                                text-align: left;
+                                background-color: #f2f2f2;">Item Name</th>
+                            <th style="border: 1px solid #ddd;
+                                padding: 8px;
+                                text-align: left;
+                                background-color: #f2f2f2;">Sold Count</th>
+                            <th style="border: 1px solid #ddd;
+                                padding: 8px;                     
+                                text-align: left;
+                                background-color: #f2f2f2;">Remaining Stock</th>
+                            <th style="border: 1px solid #ddd;
+                                padding: 8px; 
+                                text-align: left;
+                                background-color: #f2f2f2;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody style="padding: 5px;">
+                        <!-- Table rows will be inserted here by JavaScript -->
+                    </tbody>
+                </table><hr>
+                <button id="clearAllBtn4stock" style="padding: 8px 12px;
+                    cursor: pointer;
+                    margin-top: 15px;
+                    background-color: blue;
+                    border-radius: 5px;                     
+                    color: white;
+                    width: 100px;
+                    border: none;">Clear All</button><br><br>
+                </div>
+            </div><hr><hr><hr><hr><hr><hr><hr>
+            
+            <div><hr><hr><hr><hr><hr><hr>
+                
+               <div style="padding: 8px; 
+                border: 10px solid yellow;
+                text-align: center;
+                border-radius: 5px; 
+                background-color: black;">
+                   
+                   <h1 id="Sold-Services" style="color: white;">Sold Services</h1><hr>
+                   
+                   <div style="background-color: white; font-size: 25px;"><br>
+                   <input type="text" id="itemInputServe" placeholder="Enter Service Name" style="height: 30px;
+                    font-size: 18px;
+                    width: 300px;
+                    border-radius: 5px;">
+                   <button id="addItemBtnServe" style=" padding: 8px 12px: text-align: left;
+                        cursor: pointer;
+                        width: 100px;
+                        height: 40px;
+                        background-color: orange;
+                        font-size: 20px;">Add Item</button>
+                       
+                       <ul id="itemListServe" style="color: black; font-size: 25px; text-align: left; border: 2px solid black;">
+                       <!-- Items will be added here by JavaScript -->
+                   </ul>
+                       <button id="clearAllBtnServe" style=" padding: 8px 12px: text-align: left;
+                        cursor: pointer;
+                        width: 100px;
+                        height: 40px;
+                        background-color: orange;
+                        font-size: 20px;">Clear All</button>
+
+                   </div>
+                   
+               </div><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+                
+                
+            <div style="padding: 8px; 
+                border: 10px solid yellow;
+                text-align: center;
+                border-radius: 5px; 
+                background-color: black;">
+                
+               <h1 id="3in1" style="color:white;">Expenses and Discounts</h1><hr>
+                <div style="background-color: white"><br>
+        <div class="input-section">
+            <input type="text" id="expenseName" placeholder="Expense Name" style="height: 30px;
+                    font-size: 18px;
+                    width: 200px;
+                    border-radius: 5px;">
+            <input type="number" id="expenseAmount" placeholder="Amount" style="height: 30px;
+                    font-size: 18px;
+                    width: 200px;
+                    border-radius: 5px;">
+            <br><br>
+            <button id="addExpense" style="padding: 8px 12px;
+                    cursor: pointer;
+                    margin-top: 15px;
+                    background-color: blue;
+                    border-radius: 5px;                     
+                    color: white;
+                    width: 150px;
+                    border: none;">Add Expense</button>
+        </div>
+        <div class="expense-list-section" style="font-size: 25px;">
+            <h4 style="color: blue;">Expenses and Discounts with Total</h4>
+            <ul id="expenseList" style = "border: 2px solid black; text-align: left;">
+                <!-- Expenses will be added here by JavaScript -->
+            </ul>
+        </div>
+        <div class="summary-section">
+            <h3 style="font-size: 30px; color: red;">Total: <span id="totalAmount">&nbsp;&nbsp; 0.00</span></h3><hr>
+            <button id="clearAll" style="padding: 8px 12px;
+                    cursor: pointer;
+                    margin-top: 15px;
+                    background-color: blue;
+                    border-radius: 5px;                     
+                    color: white;
+                    width: 100px;
+                    border: none;">Clear All</button>
+            <br><br>
+        </div>
+        </div>
+            </div><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr>
+            
+            <div style = "background-color: black; text-align: center; border: 10px solid yellow;">
+                
+            <h1 id="expense-deduct" style="color: white; padding-left: 10px;">Subtract Expenses and Discounts Amount</h1><hr>
+                <div style="border: 5px solid black; border-radius: 10px; background-color: white;">
+                <input type="number" id="input-number" placeholder="Enter Amount" style="height: 30px;
+                    font-size: 18px;
+                    width: 200px;
+                    border-radius: 5px;">  
+                <button id="subtract-button" style="padding: 8px 12px;
+                    cursor: pointer;
+                    margin-top: 15px;
+                    background-color: red;
+                    border-radius: 5px;                     
+                    color: white;
+                    width: 100px;
+                    height: 30px;
+                    border: none;">Subtract</button><br><br>
+                </div><br>
+                <div style="border: 2px solid blue; border-radius: 10px; background-color: white;">
+                <h1 id="net-sales" style="color: red; padding-left: 10px;">TOTAL NET SALE(S)</h1>
+                <p id="subtraction-result" style="border: 1px solid red; padding-left: 10px; color: red; font-size: 50px;">Total: 0</p>
+                </div>
+            </div><hr>
+            
+            <div style= "text-align: center;">
+            <button id="myBtn" title="Go to top" style="display: none;
+                position: fixed;
+                bottom: 20px;
+                background-color: none;
+                text-align: center;
+                font-size: 20px;
+                right: 30px;
+                z-index: 99;">Back to Top</button>
+            </div>            
+            
+        </div>
+                
+            <div style="text-align: center;">
+          <button id="saveButton" style="padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;">Save Content</button>
+
+                <div id="saveOptions" style="display: none;">
+                    <br><button id="saveAsPdf" style="height: 40px; background-color: orange;">Save as PDF</button>
+  <button id="saveAsImage" style="height: 40px; background-color: orange;">Save as Image</button>
+
+</div>
+                               
+            </div>    
+        </div><hr>
+             <p>....end of pdf....</p>
+            
+            <footer style="background-color: green;
+            color: white;
+             text-align: left;
+            width: 445px;
+            border: 5px solid white;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 23px;">
+            <p>&copy;2025 Kqurada_cash. All rights reserved.</p>
+            <p>Phone: +254705858736</p>
+             <P>Email: alphakobimbos@gmail.com</P>
+                <p>Developed by <span style="color: yellow;">Alphonce Otieno</span></p>
+        </footer>
+    
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <script src="time.js"></script>
+    <script src="login.js"></script>
+    <script src="topbtn.js"></script>
+    <script src="sectionbtns.js"></script>
+    <script src="pdfsave.js"></script>
+    <script src="threein1.js"></script>
+    <script src="barberdivs.js"></script>
+    <script src="stocktable1.js"></script>
+    <script src="slidewithalt.js"></script>
+    <script src="saveas.js"></script>
+    <script src="list.js"></script>
+    <script src="share.js"></script>
+    <script src="balancesheet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+</body>
+</html>
+
