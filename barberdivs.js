@@ -6,9 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
         photo: 'mkongo1.jpg',
         bio: ''
     }, 
+
+  {
+        id: 2,
+        name: 'Kennedy Wonder',
+        service: 'Hair Styling, Dreadlocks, Die, Shave',
+        photo: 'barber1.jpeg',
+        bio: ''
+    },                   
     
     {
-        id: 2,
+        id: 3,
         name: 'Ben Kaindi',
         service: 'Hair Styling, Color, Die, Shave',
         photo: 'barber2.jpeg',
@@ -16,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     
     {
-        id: 3,
+        id: 4,
         name: 'Colinse Jairo',
         service: 'Quick Trim, Waxing, Hair Growing',
         photo: 'barber3.jpeg',
@@ -24,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     
     {
-        id: 4,
+        id: 5,
         name: 'Diana Prince',
         service: 'Hair Trim, Line Cut, Head Massage',
         photo: 'barber4.jpeg',
