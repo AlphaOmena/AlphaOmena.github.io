@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bio: ''
     }, 
 
-  {
+    {
         id: 2,
         name: 'Kennedy Wonder',
         service: 'Hair Styling, Dreadlocks, Die, Shave',
