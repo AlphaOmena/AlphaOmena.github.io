@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const barbers = [{
+    const barbers = [ 
+    {
         id: 1,
         name: 'Lovely The Barber',
         service: 'Cut & Shave',
