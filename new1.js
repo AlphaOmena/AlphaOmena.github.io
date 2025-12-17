@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contacts = [
         { name: "Love The Barber: 1", location: "Nairobi, Langata & Congo, Goma", phone: "+243970180702" },
-        { name: "Ben Kaindi: 2", location: "Nairobi, Sputh B", phone: "+254705858736" },
-        { name: "Colinse Jairo: 3", location: "Nairobi, Weslands", phone: "+254705858736" },
-        { name: "Diana Prince: 4", location: "Nairobi, Town", phone: "+254705858736" }
+        { name: "Kennedy Wonder: 2", location: "Nairobi, Nairobi West", phone: "+254705858736" },  
+        { name: "Ben Kaindi: 3", location: "Nairobi, South B", phone: "+254705858736" },
+        { name: "Colinse Jairo: 4", location: "Nairobi, Weslands", phone: "+254705858736" },
+        { name: "Diana Prince: 5", location: "Nairobi, Town", phone: "+254705858736" }
     ];
 
     const contactListDiv = document.getElementById('contactList');
