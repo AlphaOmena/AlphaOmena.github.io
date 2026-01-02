@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.counters-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows counters to wrap onto the next line if screen is too narrow */
+    gap: 20px;
+    justify-content: flex-start; /* Aligns items to the start of the container */
+}
+
+.counter-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 500px; /* Fixed width for consistent horizontal layout */
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.counter-card:hover {
+    transform: translateY(-5px);
+}
+
+.counter-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.counter-display {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.reset-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.reset-btn:hover {
+    background-color: #c82333;
+}
