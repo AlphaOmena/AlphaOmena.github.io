@@ -11,10 +11,10 @@ const galleryContainer = document.getElementById('galleryContainer');
 
 const images = [
 
-  { src: 'add1.jpg', alt: 'Rabbers & Sneakers', keywords: ['rubbers', 'shoes', 'sneakers'] },
-  { src: 'add2.jpeg', alt: 'Shoes', keywords: ['shoes', 'rubbers', 'sneakers'] },
-  { src: 'add16.jpeg', alt: 'Clothes & Shoes', keywords: ['shoes', 'clothes', 'dress', 'capes'] },
-  { src: 'add4.jpg', alt: 'Ladies Shoes', keywords: ['ladies', 'sandala', 'shoes'] },
+  { src: 'cooker.jpg', alt: 'Eurochef cooker', keywords: ['four banner', 'Eurochef', 'cooker'] },
+  { src: 'cooker1.jpg', alt: 'Eurochef Cooker', keywords: ['four banner', 'Eurochef', 'cooker'] },
+  { src: 'cooker2.jpg', alt: 'Eurochef cooker', keywords: ['four banner', 'Eurochef', 'cooker', 'new'] },
+  { src: 'cooker3.jpg', alt: 'Eurochef cooker', keywords: ['four banner', 'Eurochef', 'cooker'] },
   { src: 'add5.jpeg', alt: 'Ladies Shoes', keywords: ['ladies', 'sandals', 'shoes'] },
   { src: 'add6.jpeg', alt: 'Converse Rubbers', keywords: ['shoes', 'rubbers', 'converse'] },
   { src: 'add9.jpg', alt: 'Kids Clothes', keywords: ['kids', 'clothes', 'sweters', 'dress'] },
